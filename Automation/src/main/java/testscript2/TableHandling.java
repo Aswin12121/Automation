@@ -37,14 +37,17 @@ public class TableHandling extends Base{
 	public void check()
 	{
 		driver.navigate().to("https://selenium.qabible.in/table-pagination.php");
-		List<WebElement> checkprinting = driver.findElements(By.xpath("//table[@id='dtBasicExample']//tbody//tr//td[1]"));
-		String name = "Ashton Cox";
-		for (WebElement n1 : checkprinting) {
-            if (n1.getText().equalsIgnoreCase(name)) {
-                System.out.println(name + " is present in the table.");
-            }
+		List<WebElement>checkprint= driver.findElements(By.xpath("//table [@id='dtBasicExample']//tbody//tr//td[1]"));
+		String name= "Ashton Cox";
+		for(WebElement che:checkprint)
+		{
+			if(che.getText().equalsIgnoreCase(name))
+			{
+				System.out.println(name +" is present in the table");
+			}
 		}
 	}
+	
 
 	public static void main(String[] args) {
 		TableHandling tablehandling= new TableHandling();
